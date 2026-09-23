@@ -42,7 +42,7 @@ else:
   if len(words) < 4:
     st. write('No forecast')
   else:
-    df_dtm = vect.transform(user_text)
+    df_dtm = vect.transform([user_text])
     prediction = nb.predict(df_dtm)[0]
     confidence = nb.predict_proba(df_dtm)[0].max()
     if confidence < 0.5:
